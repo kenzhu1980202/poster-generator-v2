@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海报批量生成器</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>海报批量生成器</h1>
+
+    <div class="instructions">
+      <p><strong>第一步:</strong> 准备一个Excel文件，包含 "school", "major", "image" 三列。</p>
+      <p><strong>第二步:</strong> 将所有Offer图片准备好，确保图片文件名与Excel中的'image'列完全对应。</p>
+    </div>
+
+    <div class="form-group">
+      <label for="excelFile">上传Excel文件 (.xlsx)</label>
+      <input type="file" id="excelFile" accept=".xlsx, .xls">
+    </div>
+    <div class="form-group">
+      <label for="offerImages">选择所有Offer图片 (可多选)</label>
+      <input type="file" id="offerImages" accept="image/*" multiple>
+    </div>
+
+    <button id="batchGenerateBtn">开始批量生成</button>
+
+    <div id="status" class="status-wrapper"></div>
+
+  </div>
+
+  <canvas id="posterCanvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
